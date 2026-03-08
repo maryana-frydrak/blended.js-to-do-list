@@ -14,7 +14,15 @@
       <p>Текст</p>
   </li>
 */
+import { getTasks, innitStore } from './js/local-storage-api';
+import { createMarkupTasks } from './js/markup-tasks';
 import refs from './js/refs';
-import { handlerForm } from './js/tasks';
+import { renderTask } from './js/render-tasks';
+import { handlerDelete, handlerForm } from './js/tasks';
+import { handlerChangeTheme } from './js/theme-switcher';
 
+innitStore();
+renderTask(createMarkupTasks(getTasks()));
 refs.form.addEventListener('submit', handlerForm);
+refs.list.addEventListener('click', handlerDelete);
+refs.btnTheme.addEventListener('click', handlerChangeTheme);
