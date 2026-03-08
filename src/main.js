@@ -14,3 +14,7 @@
       <p>Текст</p>
   </li>
 */
+import refs from './js/refs';
+import { handlerForm } from './js/tasks';
+
+refs.form.addEventListener('submit', handlerForm);
