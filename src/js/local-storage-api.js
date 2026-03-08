@@ -19,3 +19,7 @@ export function deleteTaskStore(id) {
   const newArr = arr.filter(el => el.id !== id);
   localStorage.setItem('tasks', JSON.stringify(newArr));
 }
+
+export function saveTheme(theme) {
+  localStorage.setItem('user-theme', JSON.stringify(theme));
+}
