@@ -21,5 +21,20 @@ export function deleteTaskStore(id) {
 }
 
 export function saveTheme(theme) {
-  localStorage.setItem('user-theme', JSON.stringify(theme));
+  if (body.classList.contains('dark')) {
+    localStorage.setItem('theme', 'dark'.JSON.stringify(theme));
+  } else {
+    localStorage.setItem('theme', 'light'.JSON.stringify(theme));
+  }
+}
+
+export function getTheme() {
+  return JSON.parse(localStorage.getItem('theme'));
+}
+
+export function innitTheme() {
+  const loadTheme = getTheme() || [];
+  if (loadTheme === 'dark') {
+    body.classList.add('dark', JSON.stringify(tasks));
+  }
 }
